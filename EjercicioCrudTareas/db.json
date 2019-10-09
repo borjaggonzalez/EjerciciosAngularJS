@@ -1,0 +1,71 @@
+{
+  "tareas": [
+    {
+      "id": 1,
+      "completada": true,
+      "descripcion": "Tomas cafe a las 11:00"
+    },
+    {
+      "id": 2,
+      "completada": true,
+      "descripcion": "Ejemplo Componentes"
+    },
+    {
+      "id": 3,
+      "completada": false,
+      "descripcion": "Poner bonita imagen de fondo con css"
+    },
+    {
+      "id": 4,
+      "completada": false,
+      "descripcion": "Poner focus al input despues de pulsar boton"
+    },
+    {
+      "completada": false,
+      "descripcion": "Mirar como no recargar la pagina",
+      "id": 5
+    },
+    {
+      "id": 6,
+      "completada": true,
+      "descripcion": "Icono para eliminar"
+    },
+    {
+      "id": 7,
+      "completada": true,
+      "descripcion": "Filtrar por nombre"
+    },
+    {
+      "completada": false,
+      "descripcion": "filtrar por completadas o no completadas",
+      "id": 8
+    },
+    {
+      "completada": false,
+      "descripcion": "entender lo que escribooo",
+      "id": 9
+    },
+    {
+      "id": 10,
+      "completada": true,
+      "descripcion": "check a lado de la tarea"
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
