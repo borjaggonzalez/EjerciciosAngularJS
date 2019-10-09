@@ -36,9 +36,9 @@
       "descripcion": "Filtrar por nombre"
     },
     {
-      "completada": false,
-      "descripcion": "filtrar por completadas o no completadas",
-      "id": 8
+      "id": 8,
+      "completada": true,
+      "descripcion": "filtrar por completadas o no completadas"
     },
     {
       "completada": false,
