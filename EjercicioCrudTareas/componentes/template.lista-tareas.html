@@ -21,9 +21,11 @@
     <ul class="list-group">
         
         <li class="list-group-item {{(tarea.completada)?'tachado':''}}"  ng-repeat="tarea in tareas | filter:busqueda">
-            <span ng-hide="mostrarEditar">
+         
+          <span ng-hide="mostrarEditar" class="float-left">
                 <input type="checkbox" ng-checked="{{tarea.completada}}"  ng-click="completarTarea(tarea)" class="mr-2">
             </span>
+            <input type="text" class="form-control mb-2 w-75 {{(mostrarEditar)?'':'no-editable'}} float-left"  ng-readonly="!mostrarEditar" ng-model="tarea.descripcion">   
             <span ng-show="mostrarEditar">
                 <button class="btn btn-success" ng-click="editarTarea(tarea)">Guardar</button>
                <button class="btn btn-danger" ng-click="mostrarEditar = !mostrarEditar; tarea.descripcion = oldDescripcion">Cancelar</button>
@@ -31,7 +33,7 @@
               <i class="fas fa-trash-alt float-right ml-2"   ></i>
                <i class="fas fa-pencil-alt float-right"  ng-click="mostrarEditar = !mostrarEditar; oldDescripcion = tarea.descripcion" ></i>
      
-            <input type="text" class="form-control mb-2 {{(mostrarEditar)?'':'no-editable'}}"  ng-readonly="!mostrarEditar" ng-model="tarea.descripcion"> 
+             
       
         </li>        
     </ul> 
