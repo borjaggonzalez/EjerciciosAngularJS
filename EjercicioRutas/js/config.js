@@ -11,11 +11,17 @@ app.config( function( $routeProvider ){
     .when('/alumnos',{
       templateUrl: 'parciales/alumnos.html'
   })
-    .when('/profesores',{
-        templateUrl: 'parciales/profesores.html'
+    .when('/frutas',{
+        template: '<componente-frutas></componente-frutas>'
     })
     .when('/creditos',{
       templateUrl: 'parciales/creditos.html'
+    })
+    .when('/componente2',{
+      template: '<componente-boton></componente-boton>'
+    })
+    .when('/programacionfuncional',{
+      templateUrl: 'parciales/programfuncional.html'
     })
     .otherwise({
       redirectTo: '/'

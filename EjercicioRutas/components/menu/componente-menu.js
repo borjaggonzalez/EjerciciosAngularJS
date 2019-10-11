@@ -7,32 +7,43 @@ angular.module('angularApp'). //nombreApp
       $scope.rutas=[
         { 
           "nombre":"Inicio",
-           "url":"#!/",
-           "active":true
-  
+          "url":"#!/",
+          "active":true, 
+          "icono":"fas fa-home"
        },
        { 
-          "nombre":"Profesores",
-         "url":"#!/profesores",
-          "active":false
+          "nombre":"Frutas",
+          "url":"#!/frutas",
+          "active":false,
+          "icono": "fas fa-apple-alt"
         },
         { 
           "nombre":"Alumnos",
-         "url":"#!/alumnos",
-          "active":false
+          "url":"#!/alumnos",
+          "active":false,
+          "icono":"fas fa-user-graduate"
         },
         { 
           "nombre":"Creditos",
          "url":"#!/creditos",
-          "active":false
+          "active":false,
+          "icono":"fas fa-ticket-alt"
         },
         { 
-          "nombre":"Componente",
+          "nombre":"Componentes",
          "url":"#!/componente1",
-          "active":false
-        }
-      
-      ]
+          "active":false,
+          "icono":"fas fa-cogs"
+        }, 
+        { 
+          "nombre":"Filter,Map,Reduce",
+         "url":"#!/programacionfuncional",
+          "active":false,
+          "icono":"fas fa-terminal"
+        },
+       
+       
+      ];
 
      
   
