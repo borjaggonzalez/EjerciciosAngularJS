@@ -34,8 +34,6 @@ app.controller( 'promesasController', ['$scope','$http','$q','$timeout',
 
     }//sumar
 
-
-
     //vamos a llamar a la funcion asicrona
         $scope.p1=$scope.sumar(2,3,false,2000).then(function(result){
              console.debug('promesa1 cumplida resultado %o ' + result);
@@ -54,7 +52,12 @@ app.controller( 'promesasController', ['$scope','$http','$q','$timeout',
    });
 
    //vamosa esperar a que se cumplan las dos
-   $scope.resultadoTotal= $scope.p1 + $scope.p2;
-   
+   $q.all( [$scope.p1 , $scope.p2] ).then( function(){
+         console.debug("Todas las promesas completadas");
+         $scope.resultadoTotal = $scope.resultado1 + $scope.resultado2;
+
+    }).catch(function (result) {
+            console.debug("fallo alguna promesa");
+    });    
         
 }]);
