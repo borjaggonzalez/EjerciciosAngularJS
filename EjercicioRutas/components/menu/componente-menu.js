@@ -40,7 +40,12 @@ angular.module('angularApp'). //nombreApp
          "url":"#!/programacionfuncional",
           "active":false,
           "icono":"fas fa-terminal"
-        },
+        },{ 
+          "nombre":"Promesas",
+         "url":"#!/promesas",
+          "active":false,
+          "icono":"fas fa-pray"
+        }
        
        
       ];

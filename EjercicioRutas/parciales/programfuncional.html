@@ -40,7 +40,7 @@
 </div>
 
 <h2>Ejercicio Real con Contratos</h2>
-<div class="row" ng-controller="contratosController">
+<div ng-controller="contratosController">
         
        
         
@@ -55,19 +55,96 @@
 
         <p class="text-danger">En todo lo anterior no pueden usar bucles for ni foreach, por supuesto </p>
 <hr/>
-<div class="row">
+
 Contartos totales:{{contratos.length}}<br/>
-1: {{tipoproductkt.length}}<br/>
-2: {{coddigsalario.length}}<br/>
-3: {{tipoproductkt.length}}<br/>
-4: {{tipoproductkt.length}}<br/>
-5: {{tipoproductkt.length}}
+1: {{ejercicio1.length}}<br/>
+2: {{ejercicio2.length}}<br/>
+3: {{ejercicio3.length}}<br/>
+4: {{ejercicio4.length}}<br/>
+5: {{ejercicio5.length}}<br/>
 
 
-<ul class="list-group list-group-flush" >
-        <li class="list-group-item" ng-repeat='kt in tipoproductkt'>{{kt}}</li>  
-</ul>
-{{coddigsalario}}
-</div>
+Tipodes de Producto = {{tiposproductos.length}} {{tiposproductos}}
+
+
+    <br/>
+<div class="accordion" id="accordionExample">
+    <div class="card">
+      <div class="card-header" id="headingOne">
+        <h2 class="mb-0">
+          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            Ejercicio 1
+          </button>
+        </h2>
+      </div>
+  
+      <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+        <div class="card-body">
+            <ul class="list-group list-group-flush" >
+                <li class="list-group-item" ng-repeat='kt in ejercicio1'>{{kt}}</li>  
+        </ul>    
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" id="headingTwo">
+        <h2 class="mb-0">
+          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+           Ejercicio 2
+          </button>
+        </h2>
+      </div>
+      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+        <div class="card-body">
+            {{ejercicio2}}
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" id="headingThree">
+        <h2 class="mb-0">
+          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Ejercicio 3
+          </button>
+        </h2>
+      </div>
+      <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+        <div class="card-body">
+            {{ejercicio3}}
+           </div>
+      </div>
+    </div>
+    <div class="card">
+            <div class="card-header" id="headingFour">
+              <h2 class="mb-0">
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
+                      Ejercicio 4
+                </button>
+              </h2>
+            </div>
+            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+              <div class="card-body">
+                  {{ejercicio4}}
+                 </div>
+            </div>
+          </div>
+          <div class="card">
+                <div class="card-header" id="headingFive">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseThree">
+                          Ejercicio 5
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+                  <div class="card-body">
+                      {{ejercicio5}}
+                     </div>
+                </div>
+              </div>
+  </div>
+  
+
+
 
 </div>
