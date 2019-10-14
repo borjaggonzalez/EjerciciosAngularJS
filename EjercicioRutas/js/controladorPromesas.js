@@ -57,7 +57,4 @@ app.controller( 'promesasController', ['$scope','$http','$q','$timeout',
    $scope.resultadoTotal= $scope.p1 + $scope.p2;
    
         
-    
-    
-        
 }]);
