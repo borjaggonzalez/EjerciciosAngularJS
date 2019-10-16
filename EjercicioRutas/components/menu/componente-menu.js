@@ -58,6 +58,11 @@ angular.module('angularApp'). //nombreApp
          "url":"#!/ejerciciocrud",
           "active":false,
           "icono":"fas fa-cross"
+        },{ 
+          "nombre":"Formulario",
+         "url":"#!/formulario",
+          "active":false,
+          "icono":"fab fa-wpforms"
         }
        
        
