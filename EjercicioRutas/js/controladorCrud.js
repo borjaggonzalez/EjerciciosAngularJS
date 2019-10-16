@@ -6,7 +6,7 @@ app.controller( 'crudController', function($scope,cancionProvider){
     $scope.ENDPOINT = "http://localhost:8080/cancion/";
     $scope.canciones= [];
     $scope.cancion=[];
-    $scope.cancionEditar= [];
+    $scope.cancionEditar= [];7
     //Eventos
     this.$onInit= function(){
     console.trace ('crudController onInit');
