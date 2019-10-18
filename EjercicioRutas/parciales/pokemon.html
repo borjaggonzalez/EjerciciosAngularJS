@@ -1,6 +1,5 @@
 <h1>{{titulo}}</h1>
-
-    BUSCAR POKEMON: <input class="form-control col-4" type="text" ng-model="busqueda.data.name" name="" id="" placeholder="Nombre">
+    BUSCAR POKEMON: <input class="form-control col-4" type="text" ng-model="busqueda.name" name="" id="" placeholder="Nombre">
 <hr/>
 <table class="table">
     <thead>
@@ -12,11 +11,11 @@
       </tr>
     </thead>
     <tbody>
-      <tr ng-repeat="pokemon in pokemons | filter:busqueda |orderBy:'data.order'"  >
-        <td>{{pokemon.data.order}}</td>
-        <td><img ng-src="{{pokemon.data.sprites.front_default}}" alt="{{pokemon.data.name}}"></td>
-        <td><a href="#!/pokemon/{{pokemon.data.name}}">{{pokemon.data.name}}</a></td>
-        <td><span ng-repeat="type in pokemon.data.types"> {{type.type.name}}<br/></span></td>
+      <tr ng-repeat="pokemon in pokemons | filter:busqueda |orderBy:'order'"  >
+        <td>{{pokemon.order}}</td>
+        <td><img ng-src="{{pokemon.sprites.front_default}}" alt="{{pokemon.name}}"></td>
+        <td><a href="#!/pokemon/{{pokemon.name}}">{{pokemon.name}}</a></td>
+        <td><span ng-repeat="type in pokemon.types"> {{type.type.name}}<br/></span></td>
       </tr>
     </tbody>
   </table>

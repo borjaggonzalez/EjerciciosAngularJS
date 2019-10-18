@@ -4,32 +4,52 @@ function PokemonProvider($http,$q){
     const ENDPOINT = "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=1000";
 
 
-    
+
 
     this.listar = function(){  
-        var q = $q.defer();  
+        
         console.log('pokemonProvider listar ' + ENDPOINT);
-        this.p1 = $http.get(ENDPOINT).then (function(result){
-            console.debug('promesa1 cumplida resultado %o ', result);
-            this.pokemons=[];
-            angular.forEach(result.data.results, function(value,key){
-                console.log('FOR EACH  ' + key  + ': ' + value.url); 
-                  this.p2 =  $http.get(value.url).then (function(resultado){
-                    
-                     this.pokemons.push(resultado);
-                        q.resolve(this.pokemons);
-                  }).catch(function(resultado){
-                    console.debug('p2 no cumplida resultado %o ', + resultado);
-                  });
+        let pokemons = [];
+        let promesas = [];
+        let q = $q.defer();  
+
+        console.log("1º llamada asincrona, para conseguir los nombres y url");
+         $http.get(ENDPOINT).then (
+             response=>{
+            let resultados = response.data.results;
+            resultados.forEach(pokemon=>{
+                 console.log("... llamada asincrona para " + pokemon.url); 
+                  let p =  $http.get(pokemon.url)
+                  promesas.push(p);// guardar promesa en array para luego sincronizar
+                  
+                  p.then (
+                      response=>{
+                             // si la promesa se cumple, guardar pokemon en array 
+                         // guardamos solo los datos, no la response completa           
+                         pokemons.push(response.data);
+                    }
+                  //si falla no hacemos nada
+                  );
 
             });//forEach
 
-        }).catch(function (result) {
-            console.debug("fallo alguna promesa %o", + resutado);
+        },
+        response =>{
+            q.reject('Error, igual esta caida la API de Pokemnon %o', response); 
         });    
+        
+        //fin 1º llamada asincrona
 
+            // Debemos sincronizar todas las promesas dentro de la 1º llamada Asincrona
+            // podeis comentar estas lineas y por la consola de chrome se ven las peticiones HXR en pestaña NETWORKS
+            // pero como no esperamos a que se cumplan todas, no se veran los datos por pantalla
+            $q.all(promesas).then(
+                response =>  { q.resolve( pokemons ) } , // resolvemos y retornamos el array con pokemos
+                response =>  { q.reject('Lo sentimos al unit todos los pokemos!!! %o', response) }
+              );
+              
 
-        return q.promise;
+              return q.promise;
       }// listar
 
     this.listaById= function(url){

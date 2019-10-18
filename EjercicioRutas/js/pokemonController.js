@@ -5,16 +5,9 @@ app.controller( 'pokemonController',['$scope','pokemonProvider', function($scope
     $scope.titulo = "Pokemon";
     $scope.pokemons = [];
 
-         
-    let p1 =  pokemonProvider.listar();
-        p1.then(response =>{
-        console.debug ('llamada listar OK %o', response);
-        $scope.pokemons = response;
-
-    }, response =>{ //gestion de errores
-        console.warn('llamada listar ERROR %o',response);
-   
-    });// listar
+    console.trace("pedimos a la API todos los pokemos");     
+    $scope.pokemons = {};
+    pokemonProvider.listar().then( data => $scope.pokemons = data );
 
 
 
