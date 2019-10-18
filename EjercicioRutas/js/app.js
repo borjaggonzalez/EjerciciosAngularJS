@@ -17,6 +17,8 @@ app.constant("servicioConstantes",{
 
  
 app.service("cancionProvider",CancionProvider);
+app.service("pokemonProvider",PokemonProvider);
+
 
 
 

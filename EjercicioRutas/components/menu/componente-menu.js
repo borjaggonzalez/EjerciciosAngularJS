@@ -6,7 +6,7 @@ angular.module('angularApp'). //nombreApp
           
       $scope.rutas=[
         { 
-          "nombre":"Inicio",
+          "nombre":"",
           "url":"#!/",
           "active":true, 
           "icono":"fas fa-home"
@@ -63,6 +63,12 @@ angular.module('angularApp'). //nombreApp
          "url":"#!/formulario",
           "active":false,
           "icono":"fab fa-wpforms"
+        },
+        { 
+          "nombre":"Pokemon",
+         "url":"#!/pokemon",
+          "active":false,
+          "icono":"fas fa-headset"
         }
        
        
