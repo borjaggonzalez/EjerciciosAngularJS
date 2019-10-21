@@ -19,7 +19,7 @@ $scope.localizar = function(){
         $scope.ocultar=false;
         $scope.initMap();
     });
-  }
+  };
 
   $scope.initMap = function() {
     var myLatLng = {
